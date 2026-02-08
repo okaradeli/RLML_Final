@@ -106,21 +106,6 @@ Curriculum Learning can be enabled to speed up convergence by starting with smal
 
 ---
 
-## Evaluation & Testing
-
-After training, evaluate the learned policy using:
-
-```bash
-python evaluate_rlml.py
-```
-
-This script:
-- Loads the trained policy  
-- Applies it to unseen data  
-- Reports classification performance metrics  
-
----
-
 ## Example Workflow
 
 1. Configure paths and learners in `globals.py`  
@@ -158,3 +143,4 @@ Please consult the repository license file for detailed usage terms.
 
 Contributions, bug reports, and extensions are welcome.  
 For significant changes, please open an issue first to discuss your proposal.
+
