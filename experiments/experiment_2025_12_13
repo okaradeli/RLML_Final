@@ -1,0 +1,117 @@
+[2025-12-13 22:37:10,025] Train_IHML started standalone bro
+[2025-12-13 22:37:10,026] Baddebt data loading...
+[2025-12-13 22:37:12,069] Raw data len:537870
+[2025-12-13 22:37:12,244] Sampled  data len:30000 column size:100
+[2025-12-13 22:37:12,252] Sample size:30000
+[2025-12-13 22:37:12,252] Column size:99
+[2025-12-13 22:37:12,265] Add Feature:id added to action space
+[2025-12-13 22:37:12,265] Add Feature:loan_amnt added to action space
+[2025-12-13 22:37:12,265] Add Feature:installment added to action space
+[2025-12-13 22:37:12,265] Add Feature:annual_inc added to action space
+[2025-12-13 22:37:12,274] Add Feature:delinq_2yrs added to action space
+[2025-12-13 22:37:12,274] Add Feature:open_acc added to action space
+[2025-12-13 22:37:12,274] Add Feature:pub_rec added to action space
+[2025-12-13 22:37:12,274] Add Feature:total_acc added to action space
+[2025-12-13 22:37:12,274] Add Feature:acc_now_delinq added to action space
+[2025-12-13 22:37:12,274] Add Feature:tot_coll_amt added to action space
+[2025-12-13 22:37:12,274] Add Feature:acc_open_past_24mths added to action space
+[2025-12-13 22:37:12,274] Add Feature:avg_cur_bal added to action space
+[2025-12-13 22:37:12,274] Add Feature:chargeoff_within_12_mths added to action space
+[2025-12-13 22:37:12,274] Add Feature:delinq_amnt added to action space
+[2025-12-13 22:37:12,274] Add Feature:mort_acc added to action space
+[2025-12-13 22:37:12,274] Add Feature:pub_rec_bankruptcies added to action space
+[2025-12-13 22:37:12,274] Add Feature:tot_hi_cred_lim added to action space
+[2025-12-13 22:37:12,274] Add Feature:total_bal_ex_mort added to action space
+[2025-12-13 22:37:12,274] Add Feature:total_bc_limit added to action space
+[2025-12-13 22:37:12,274] Add Feature:total_il_high_credit_limit added to action space
+[2025-12-13 22:37:12,274] Add Feature:term_num added to action space
+[2025-12-13 22:37:12,274] Add Feature:isPresident added to action space
+[2025-12-13 22:37:12,274] Add Feature:isDirector added to action space
+[2025-12-13 22:37:12,274] Add Feature:isDriver added to action space
+[2025-12-13 22:37:12,274] Add Feature:has_history added to action space
+[2025-12-13 22:37:12,274] Add Feature:annual_inc_both added to action space
+[2025-12-13 22:37:12,274] Add Feature:isEmployed added to action space
+[2025-12-13 22:37:12,274] Add Feature:tenure added to action space
+[2025-12-13 22:37:12,274] Add Feature:0 added to action space
+[2025-12-13 22:37:12,274] Add Feature:1 added to action space
+[2025-12-13 22:37:12,275] Add Feature:2 added to action space
+[2025-12-13 22:37:12,275] Add Feature:3 added to action space
+[2025-12-13 22:37:12,275] Add Feature:4 added to action space
+[2025-12-13 22:37:12,275] Add Feature:5 added to action space
+[2025-12-13 22:37:12,275] Add Feature:6 added to action space
+[2025-12-13 22:37:12,275] Add Feature:7 added to action space
+[2025-12-13 22:37:12,275] Add Feature:8 added to action space
+[2025-12-13 22:37:12,275] Add Feature:9 added to action space
+[2025-12-13 22:37:12,275] Add Feature:10 added to action space
+[2025-12-13 22:37:12,275] Add Feature:11 added to action space
+[2025-12-13 22:37:12,275] Add Feature:12 added to action space
+[2025-12-13 22:37:12,275] Add Feature:13 added to action space
+[2025-12-13 22:37:12,275] Add Feature:14 added to action space
+[2025-12-13 22:37:12,275] Add Feature:15 added to action space
+[2025-12-13 22:37:12,275] Add Feature:16 added to action space
+[2025-12-13 22:37:12,275] Add Feature:17 added to action space
+[2025-12-13 22:37:12,275] Add Feature:18 added to action space
+[2025-12-13 22:37:12,275] Add Feature:19 added to action space
+[2025-12-13 22:37:12,275] Add Feature:20 added to action space
+[2025-12-13 22:37:12,275] Add Feature:21 added to action space
+[2025-12-13 22:37:12,275] Add Feature:22 added to action space
+[2025-12-13 22:37:12,275] Add Feature:23 added to action space
+[2025-12-13 22:37:12,275] Add Feature:24 added to action space
+[2025-12-13 22:37:12,275] Add Feature:25 added to action space
+[2025-12-13 22:37:12,275] Add Feature:26 added to action space
+[2025-12-13 22:37:12,275] Add Feature:27 added to action space
+[2025-12-13 22:37:12,275] Add Feature:28 added to action space
+[2025-12-13 22:37:12,275] Add Feature:29 added to action space
+[2025-12-13 22:37:12,275] Add Feature:30 added to action space
+[2025-12-13 22:37:12,275] Add Feature:31 added to action space
+[2025-12-13 22:37:12,275] Add Feature:32 added to action space
+[2025-12-13 22:37:12,275] Add Feature:33 added to action space
+[2025-12-13 22:37:12,275] Add Feature:34 added to action space
+[2025-12-13 22:37:12,275] Add Feature:35 added to action space
+[2025-12-13 22:37:12,275] Add Feature:36 added to action space
+[2025-12-13 22:37:12,275] Add Feature:37 added to action space
+[2025-12-13 22:37:12,275] Add Feature:38 added to action space
+[2025-12-13 22:37:12,275] Add Feature:39 added to action space
+[2025-12-13 22:37:12,275] Add Feature:40 added to action space
+[2025-12-13 22:37:12,275] Add Feature:41 added to action space
+[2025-12-13 22:37:12,275] Add Feature:42 added to action space
+[2025-12-13 22:37:12,275] Add Feature:43 added to action space
+[2025-12-13 22:37:12,275] Add Feature:44 added to action space
+[2025-12-13 22:37:12,275] Add Feature:45 added to action space
+[2025-12-13 22:37:12,275] Add Feature:46 added to action space
+[2025-12-13 22:37:12,276] Add Feature:47 added to action space
+[2025-12-13 22:37:12,276] Add Feature:48 added to action space
+[2025-12-13 22:37:12,276] Add Feature:49 added to action space
+[2025-12-13 22:37:12,276] Add Feature:50 added to action space
+[2025-12-13 22:37:12,276] Add Feature:51 added to action space
+[2025-12-13 22:37:12,276] Add Feature:52 added to action space
+[2025-12-13 22:37:12,276] Add Feature:53 added to action space
+[2025-12-13 22:37:12,276] Add Feature:54 added to action space
+[2025-12-13 22:37:12,276] Add Feature:55 added to action space
+[2025-12-13 22:37:12,276] Add Feature:56 added to action space
+[2025-12-13 22:37:12,276] Add Feature:57 added to action space
+[2025-12-13 22:37:12,276] Add Feature:58 added to action space
+[2025-12-13 22:37:12,276] Add Feature:59 added to action space
+[2025-12-13 22:37:12,276] Add Feature:60 added to action space
+[2025-12-13 22:37:12,276] Add Feature:61 added to action space
+[2025-12-13 22:37:12,276] Add Feature:62 added to action space
+[2025-12-13 22:37:12,276] Add Feature:63 added to action space
+[2025-12-13 22:37:12,276] Add Feature:64 added to action space
+[2025-12-13 22:37:12,276] Add Feature:65 added to action space
+[2025-12-13 22:37:12,276] Add Feature:66 added to action space
+[2025-12-13 22:37:12,276] Add Feature:67 added to action space
+[2025-12-13 22:37:12,276] Add Feature:68 added to action space
+[2025-12-13 22:37:12,276] Add Feature:69 added to action space
+[2025-12-13 22:37:12,276] Add Feature:70 added to action space
+[2025-12-13 22:37:12,276] Add Model:XGBClassifier added to action space
+[2025-12-13 22:37:12,276] Add Model:RandomForestClassifier added to action space
+[2025-12-13 22:37:12,276] Add Model:DecisionTreeClassifier added to action space
+[2025-12-13 22:37:12,276] RESETTING THE ENVIRONMENT
+[2025-12-13 22:37:12,276] Started training...
+[2025-12-13 22:37:13,137] | episode | return          | minimal return      | mean return        |
+|         | (this episode)  | (last 50 episodes)  | (last 50 episodes) |
+|-----------------------------------------------------------------------
+[2025-12-13 22:37:13,137] RESETTING THE ENVIRONMENT
+[2025-12-13 22:37:13,137] Episode:0 Epsilon:0.9 Epoch:0
+[2025-12-13 22:37:13,161] Epoch:0 Curriculum Learning kicked-in: Before len(samples):21000 After len(samples):21000
+[2025-12-13 22:37:13,163] Explore (new) action selected:3

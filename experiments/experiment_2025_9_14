@@ -1,0 +1,72 @@
+[2025-09-14 14:53:09,219] Train_IHML started standalone bro
+[2025-09-14 14:53:09,219] Forest Cover Type data loading...
+[2025-09-14 14:53:09,865] Raw data len:581012
+[2025-09-14 14:53:09,964] Sampled  data len:30000 column size:55
+[2025-09-14 14:53:09,968] Sample size:30000
+[2025-09-14 14:53:09,968] Column size:54
+[2025-09-14 14:53:09,976] Add Feature:Elevation added to action space
+[2025-09-14 14:53:09,976] Add Feature:Aspect added to action space
+[2025-09-14 14:53:09,976] Add Feature:Slope added to action space
+[2025-09-14 14:53:09,976] Add Feature:Horizontal_Distance_To_Hydrology added to action space
+[2025-09-14 14:53:09,994] Add Feature:Vertical_Distance_To_Hydrology added to action space
+[2025-09-14 14:53:09,994] Add Feature:Horizontal_Distance_To_Roadways added to action space
+[2025-09-14 14:53:09,994] Add Feature:Hillshade_9am added to action space
+[2025-09-14 14:53:09,994] Add Feature:Hillshade_Noon added to action space
+[2025-09-14 14:53:09,994] Add Feature:Hillshade_3pm added to action space
+[2025-09-14 14:53:09,994] Add Feature:Horizontal_Distance_To_Fire_Points added to action space
+[2025-09-14 14:53:09,994] Add Feature:Wilderness_Area1 added to action space
+[2025-09-14 14:53:09,994] Add Feature:Wilderness_Area2 added to action space
+[2025-09-14 14:53:09,994] Add Feature:Wilderness_Area3 added to action space
+[2025-09-14 14:53:09,994] Add Feature:Wilderness_Area4 added to action space
+[2025-09-14 14:53:09,994] Add Feature:Soil_Type1 added to action space
+[2025-09-14 14:53:09,994] Add Feature:Soil_Type2 added to action space
+[2025-09-14 14:53:09,994] Add Feature:Soil_Type3 added to action space
+[2025-09-14 14:53:09,994] Add Feature:Soil_Type4 added to action space
+[2025-09-14 14:53:09,994] Add Feature:Soil_Type5 added to action space
+[2025-09-14 14:53:09,994] Add Feature:Soil_Type6 added to action space
+[2025-09-14 14:53:09,994] Add Feature:Soil_Type7 added to action space
+[2025-09-14 14:53:09,994] Add Feature:Soil_Type8 added to action space
+[2025-09-14 14:53:09,994] Add Feature:Soil_Type9 added to action space
+[2025-09-14 14:53:09,994] Add Feature:Soil_Type10 added to action space
+[2025-09-14 14:53:09,994] Add Feature:Soil_Type11 added to action space
+[2025-09-14 14:53:09,994] Add Feature:Soil_Type12 added to action space
+[2025-09-14 14:53:09,994] Add Feature:Soil_Type13 added to action space
+[2025-09-14 14:53:09,994] Add Feature:Soil_Type14 added to action space
+[2025-09-14 14:53:09,994] Add Feature:Soil_Type15 added to action space
+[2025-09-14 14:53:09,994] Add Feature:Soil_Type16 added to action space
+[2025-09-14 14:53:09,994] Add Feature:Soil_Type17 added to action space
+[2025-09-14 14:53:09,994] Add Feature:Soil_Type18 added to action space
+[2025-09-14 14:53:09,994] Add Feature:Soil_Type19 added to action space
+[2025-09-14 14:53:09,994] Add Feature:Soil_Type20 added to action space
+[2025-09-14 14:53:09,994] Add Feature:Soil_Type21 added to action space
+[2025-09-14 14:53:09,994] Add Feature:Soil_Type22 added to action space
+[2025-09-14 14:53:09,994] Add Feature:Soil_Type23 added to action space
+[2025-09-14 14:53:09,994] Add Feature:Soil_Type24 added to action space
+[2025-09-14 14:53:09,994] Add Feature:Soil_Type25 added to action space
+[2025-09-14 14:53:09,994] Add Feature:Soil_Type26 added to action space
+[2025-09-14 14:53:09,994] Add Feature:Soil_Type27 added to action space
+[2025-09-14 14:53:09,994] Add Feature:Soil_Type28 added to action space
+[2025-09-14 14:53:09,994] Add Feature:Soil_Type29 added to action space
+[2025-09-14 14:53:09,994] Add Feature:Soil_Type30 added to action space
+[2025-09-14 14:53:09,994] Add Feature:Soil_Type31 added to action space
+[2025-09-14 14:53:09,994] Add Feature:Soil_Type32 added to action space
+[2025-09-14 14:53:09,994] Add Feature:Soil_Type33 added to action space
+[2025-09-14 14:53:09,994] Add Feature:Soil_Type34 added to action space
+[2025-09-14 14:53:09,994] Add Feature:Soil_Type35 added to action space
+[2025-09-14 14:53:09,994] Add Feature:Soil_Type36 added to action space
+[2025-09-14 14:53:09,994] Add Feature:Soil_Type37 added to action space
+[2025-09-14 14:53:09,995] Add Feature:Soil_Type38 added to action space
+[2025-09-14 14:53:09,995] Add Feature:Soil_Type39 added to action space
+[2025-09-14 14:53:09,995] Add Feature:Soil_Type40 added to action space
+[2025-09-14 14:53:09,995] Add Model:XGBClassifier added to action space
+[2025-09-14 14:53:09,995] Add Model:RandomForestClassifier added to action space
+[2025-09-14 14:53:09,995] Add Model:DecisionTreeClassifier added to action space
+[2025-09-14 14:53:09,995] RESETTING THE ENVIRONMENT
+[2025-09-14 14:53:09,995] Started training...
+[2025-09-14 14:53:15,190] | episode | return          | minimal return      | mean return        |
+|         | (this episode)  | (last 50 episodes)  | (last 50 episodes) |
+|-----------------------------------------------------------------------
+[2025-09-14 14:53:15,190] RESETTING THE ENVIRONMENT
+[2025-09-14 14:53:15,190] Episode:0 Epsilon:0.9 Epoch:0
+[2025-09-14 14:53:15,206] Epoch:0 Curriculum Learning kicked-in: Before len(samples):21000 After len(samples):21000
+[2025-09-14 14:53:15,208] Explore (new) action selected:Soil_Type34
