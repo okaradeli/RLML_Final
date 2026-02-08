@@ -1,67 +1,160 @@
-# lunar-lander: Reinforcement learning algorithms for training an agent to play the game lunar lander
+# RLML  
+## Reinforcement Learning-based Meta-Learner for Classification
 
-## Introduction
+RLML (Reinforcement Learning-based Meta-Learner) is an advanced meta-learning framework that formulates the meta-learner construction problem as a Reinforcement Learning (RL) task.  
+The algorithm dynamically selects base learners and feature subsets by interacting with an environment, optimizing classification performance through learned policies rather than fixed heuristics.
 
-In this repository we implement an agent that is trained to play the game lunar lander using <i>i)</i> an actor-critic algorithm, and <i>ii)</i> a (double) deep Q-learning algorithm. Here is a video of a trained agent playing the game:
+This repository provides the **final reference implementation** of the RLML algorithm.
 
-https://user-images.githubusercontent.com/37583039/219359191-7988e0dc-b1a4-43cc-82d1-4cc18be0d0a2.mp4
+---
 
-We use the lunar lander implementation from [gymnasium](https://gymnasium.farama.org). For the implementation of the actor-critic algorithm we loosely follow <a href="#ref_1">Ref. [1]</a>. While for the implementation of deep Q-learning we follow <a href="#ref_2">Ref. [2]</a>, for the implementation of double deep Q-learning we follow <a href="#ref_3">Ref. [3]</a>.
+## Key Features
 
-In the following, we [first](#files-and-usage) list the files contained in this repository and explain their usage. We [then](#comparison-actor-critic-algorithm-vs-deep-q-learning) compare the training speed and post-training performance of agents trained using the actor-critic algorithm and deep Q-learning.
+- Reinforcement Learning-driven meta-learning architecture  
+- Dynamic base-learner and feature subset selection  
+- Environment–agent formulation for meta-learning  
+- Curriculum Learning support for faster convergence  
+- Automated training, validation, and testing cycles  
+- Designed for high-dimensional and large-scale datasets  
 
-## Files and usage
+---
 
-* [agent_class.py](agent_RLML.py): In this python file we implement the agent class which, which we use both for training an agent and acting with the trained agent
-* [train and visualize agent.ipynb](train%20and%20visualize%20agent.ipynb): In this Jupyter notebook we train an agent, and subsequently create a gameplay video. The video at the beginning of this readme file was created with this notebook
-* [train_agent.py](backup/train_agent.py): In this python script we train an agent, and save both the trained agent parameters, as well as its training statistics to the disk
-* [run_agent.py](backup/train_agent.py): In this python script we run episodes for an already trained agent, and save statistics (duration of episodes, return for each episode) to the disk
-* [trained_agents/batch_train_and_run.sh](trained_agents/batch_train_and_run.sh): With this bash script we train 500 agents (via [train_agent.py](backup/train_agent.py)) and subsequently run 1000 episodes for each trained agent (via [run_agent.py](backup/run_agent.py)). The script by default runs 8 processes in parallel.
-* [trained_agents/plot_results.ipynb](trained_agents/plot_results.ipynb): In this Jupyter notebook we analyze the training statistics and performance of the trained agents from [batch_train_and_run.sh](trained_agents/batch_train_and_run.sh), as summarized in [this section](#comparison-actor-critic-algorithm-vs-deep-q-learning).
+## Algorithm Overview
 
-## Comparison: actor-critic algorithm vs. deep Q-learning
+RLML models the meta-learning process as a Reinforcement Learning problem:
 
-With the script [batch_train_and_run.sh](trained_agents/batch_train_and_run.sh) we first train 500 agents and then run 1000 episodes for each agent using
-1. the actor-critic algorithm, and
-2. the deep q-learning (DQN) algorithm.
+- **State:** Current feature subset, base-learner configuration, and performance signals  
+- **Action:** Selection or elimination of base learners and/or features  
+- **Reward:** Performance-based feedback (e.g., accuracy, F1-score improvements)  
+- **Policy:** Learned strategy that optimizes long-term classification performance  
 
-Here is a plot showing the distribution of the episodes needed for training for each scenario, along with the mean:
+Through iterative interaction with the environment, the agent learns an optimal policy for constructing a robust meta-learner.
 
-![training_n_episodes](https://user-images.githubusercontent.com/37583039/227004864-4bc5a4f4-6df3-4edd-a389-af3dbdf8da92.png)
+---
 
-We observe that the distribution of episodes needed for training is more spread out for the actor-critic method. Furthermore, the actor-critic algorithm on average needed 28% more episodes to complete the training as compared to the DQN algorithm.
+## Repository Structure
 
-Here is a plot showing the actual runtime distribution of the respective 500 trainings:
+```
+├── data/                     # Partial sample datasets (for structure only)
+├── globals.py                # Global configuration and environment settings
+├── rlml_environment.py       # RL environment definition
+├── rlml_agent.py             # RL agent (Q-learning / DQN-based)
+├── train_rlml.py             # Training script
+├── evaluate_rlml.py          # Evaluation and testing script
+├── base_learners/            # Base learning algorithms
+├── utils/                    # Helper functions and utilities
+└── README.md
+```
 
-![training_execution_time](https://user-images.githubusercontent.com/37583039/227005536-58dad8cc-1cd4-4c0f-a2c3-53b1f3d6a0fd.png)
+**Important:**  
+The `data/` directory contains **partial samples only**.  
+Full datasets must be obtained from their original sources (e.g., UCLA, UCI, Kaggle).
 
-On average, the actor-critic algorithm takes 67% longer to train as compared to deep Q-learning. Note that in the actor-critic algorithm we have twice as many parameters as compared to the Q-learning algorithm. This is because all neural networks we use are of equal size, and in the actor-critic algorithm we train 2 neural networks (namely the actor and the critic).
+---
 
-For each trained agent, we run 1000 episodes. Here is a plot of the resulting distribution of all episode returns for each scenario:
+## Setup & Configuration
 
-![return_distribution](https://user-images.githubusercontent.com/37583039/227030052-69404955-da7d-4a52-b778-7d3638166308.png)
+### 1. Configure Global Settings
 
-We observe that the distributions are rather similar. While the DQN agents perform slightly better on average (return of 227.4 for DQN vs 211.6 for actor-critic), the support of the agent-critic distributions returns extends a bit further to the right (high returns) of the plot.
+Edit `globals.py` and ensure:
+- Dataset paths are correctly set  
+- Output and logging directories exist  
+- RL-related parameters (episodes, steps, rewards) are defined  
 
-To investigate this last point further, we for both algorithms select the agent that yielded the highest average return in its 1000 episodes, and plot the respective return distribution:
+This step is mandatory before running RLML.
 
-![return_distribution_best](https://user-images.githubusercontent.com/37583039/227030006-bbb71677-1c2e-4369-8b53-1fc0a7b1f5ac.png)
+---
 
-We see that the best actor-critic agent performs slightly better than the best DQN agent (mean return 261.9 vs. mean return 238.0). 
+### 2. Enable Base Learners
 
-We summarize:
-- Compared to the actor-critic algorithm, the DQN algorithm yielded both a smaller mean and variance for the number of training episodes necessary for successful training. On average, the DQN algorithm also needed less time for training.
-- The mean return of the trained DQN agents was slightly larger as compared to the actor-critic agents.
-- However, the single best DQN agent performed a little bit worse than the single best actor-critic agent.
+In `globals.py`, explicitly enable the base classifiers to be used by the RL agent, such as:
+- Random Forest (RF)  
+- XGBoost (XGB)  
+- Support Vector Machines (SVM)  
 
-So overall, while the DQN algorithm on average trains faster and yields better mean performance, in our samples the best agent was obtained from the actor-critic algorithm.
+Only enabled learners will be considered during policy learning.
 
-In a more thorough study one might want to increase the number of trained agents to see whether our best actor being an actor-critic agent was a random fluctuation. Furthermore, one might want to vary the hyperparameters for training, so as to optimize the number of training episodes for each algorithm.
+---
 
-## References
+### 3. Hyperparameters
 
-<a id="ref_1">[1] **Reinforcement Learning: An Introduction**. Richard S. Sutton, Andrew G. Barto. [http://incompleteideas.net/book/the-book.html](http://incompleteideas.net/book/the-book.html).</a>
+Common RL-related hyperparameters include:
+- Learning rate (α)  
+- Discount factor (γ)  
+- Exploration rate (ε)  
+- Number of episodes  
+- Maximum steps per episode  
 
-<a id="ref_2">[2] **Playing Atari with Deep Reinforcement Learning**. Volodymyr Mnih, Koray Kavukcuoglu, David Silver, Alex Graves, Ioannis Antonoglou, Daan Wierstra, Martin Riedmiller. [arXiv:1312.5602](https://arxiv.org/abs/1312.5602).</a>
+These parameters can be tuned in `globals.py` or related configuration files.
 
-<a id="ref_3">[3] **Deep Reinforcement Learning with Double Q-learning**. Hado van Hasselt, Arthur Guez, David Silver. [arXiv:1509.06461](https://arxiv.org/abs/1509.06461).</a>
+---
+
+## Training RLML
+
+To train the RL-based meta-learner, run:
+
+```bash
+python train_rlml.py
+```
+
+During training:
+- The agent interacts with the environment  
+- Rewards are collected after each action  
+- Policies are updated incrementally  
+
+Curriculum Learning can be enabled to speed up convergence by starting with smaller data subsets.
+
+---
+
+## Evaluation & Testing
+
+After training, evaluate the learned policy using:
+
+```bash
+python evaluate_rlml.py
+```
+
+This script:
+- Loads the trained policy  
+- Applies it to unseen data  
+- Reports classification performance metrics  
+
+---
+
+## Example Workflow
+
+1. Configure paths and learners in `globals.py`  
+2. Adjust RL hyperparameters  
+3. Train the RLML agent  
+4. Evaluate the trained meta-learner  
+
+---
+
+## Datasets
+
+RLML has been tested on multiple benchmark datasets.  
+Due to licensing and size constraints, full datasets are **not included**.
+
+Please download datasets from their original sources (e.g., UCLA, UCI, Kaggle) and place them under the `data/` directory.
+
+---
+
+## Reference
+
+If you use this code in academic or industrial work, please cite the relevant RLML publication(s).
+
+(Reference details to be added or updated here if applicable)
+
+---
+
+## License
+
+This project is provided for **research and educational purposes**.  
+Please consult the repository license file for detailed usage terms.
+
+---
+
+## Contributions
+
+Contributions, bug reports, and extensions are welcome.  
+For significant changes, please open an issue first to discuss your proposal.
